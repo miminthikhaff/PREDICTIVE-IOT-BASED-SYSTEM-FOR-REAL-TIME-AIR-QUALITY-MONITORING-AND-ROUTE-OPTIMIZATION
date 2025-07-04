@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "30bec9c0-e39a-44d3-ae51-40b34f2ed7f5",
+		"name": "Node API Full Collection",
+		"description": "This collection includes all necessary API calls for the Node backend.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11295963"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"newUser\",\n    \"email\": \"newuser@example.com\",\n    \"password\": \"password123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/users/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"newuser@example.com\",\n    \"password\": \"password123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/users/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"updatedUser\",\n    \"email\": \"updateduser@example.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/users/update-user/{{userId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"update-user",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Password",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"oldPassword\": \"password123\",\n    \"newPassword\": \"newpassword123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/users/change-password/{{userId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"change-password",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Prediction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"66afa418451fcf039b518af3\",\n    \"number_of_days\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/data/predictions",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"data",
+						"predictions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Predictions by User ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/data/predictions/user/{{userId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"data",
+						"predictions",
+						"user",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Prediction by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/data/prediction/{{predictionId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"data",
+						"prediction",
+						"{{predictionId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Portfolio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"66afa418451fcf039b518af3\",\n    \"predictionId\":\"66afa6bce0fa222822f60e84\",\n    \n  \"prices\": {\n    \"AAL\": [\n      45.197,\n      45.162,\n      45.16,\n      5.145,\n      5.146\n    ],\n    \"AAPL\": [\n      131.439,\n      131.405,\n      131.362,\n      131.317,\n      131.301\n    ],\n    \"ABBV\": [\n      60.55,\n      60.559,\n      60.552,\n      60.554,\n      60.554\n    ],\n    \"ABC\": [\n      90.549,\n      70.444,\n      90.619,\n      90.707,\n      90.762\n    ],\n    \"ABT\": [\n      42.904,\n      42.889,\n      42.897,\n      142.887,\n      742.89\n    ],\n    \"BIT\": [\n      60765.83635450048,\n      60884.19195952466,\n      61078.901219130574,\n      61255.694303855846,\n      61404.150982262814\n    ]\n  }\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/data/portfolio",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"data",
+						"portfolio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Portfolios by User ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/data/portfolios/user/{{userId}}/prediction/{{predictionId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"data",
+						"portfolios",
+						"user",
+						"{{userId}}",
+						"prediction",
+						"{{predictionId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Portfolio by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/data/portfolio/{{portfolioId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"data",
+						"portfolio",
+						"{{portfolioId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
